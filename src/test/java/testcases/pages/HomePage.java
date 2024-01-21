@@ -13,19 +13,11 @@ public class HomePage extends AbstractComponent {
 
 	@FindBy(css = "img[alt='Website for automation practice']")
 	private WebElement homeBanner;
-
-	@FindBy(css = "a[href ='/login']")
-	private WebElement signupButton;
+	
+	
 
 	public WebElement getBanner() {
 		return homeBanner;
 	}
-
-	public void clickSignupButton() {
-		signupButton.click();
-	}
-
-	public WebElement getSignupButton() {
-		return signupButton;
-	}
+	
 }

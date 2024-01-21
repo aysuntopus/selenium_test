@@ -3,7 +3,14 @@
   <test name="Test1">
     <classes>
       <class name="testcases.tests.RegisterUser"/>
-       <class name="testcases.tests.DeleteAccount"/>
+      <class name="testcases.tests.LoginUser"/>
+      <class name="testcases.tests.Logout"/>
+    </classes>
+   </test>  
+    <test name="Test2">
+    <classes>
+      <class name="testcases.tests.LoginUser"/>
+	  <class name="testcases.tests.DeleteAccount"/>
     </classes>
   </test>  
 </suite>

@@ -10,7 +10,7 @@ public class BaseTest extends AbstractComponent {
 		driver.close();
 	}
 	
-	public void navigateMainPage() {
+	public void navigateMainPage() throws InterruptedException {
 		driver.get("http://automationexercise.com");
-	}
+	}	
 }

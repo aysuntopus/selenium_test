@@ -14,6 +14,7 @@ public class DeleteAccount extends BaseTest {
 	@Test
 	public void deleteAccount() throws InterruptedException {		
 		click(getDeleteButton());
+		closeChild();
 		assertVisible(deletePage.getSuccessMessage(), "account delete is not seen");
 		click(deletePage.getDeleteContinueButton());
 	}

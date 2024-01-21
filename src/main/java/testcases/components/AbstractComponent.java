@@ -1,6 +1,9 @@
 package testcases.components;
 
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -14,12 +17,33 @@ import org.testng.Assert;
 public class AbstractComponent {
 	public WebDriver driver;
 
-	@FindBy(css = "a[href='/delete_account']")
-	private WebElement deleteButton;
-
 	public AbstractComponent() {
 		this.driver = DriverManager.getInstance().getDriver();
 		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(css = "a[href='/delete_account']")
+	private WebElement deleteButton;
+
+	@FindBy(css = "a[href='/logout']")
+	private WebElement logoutButton;
+
+	@FindBy(css = "a[href ='/login']")
+	private WebElement signupButton;
+
+	@FindBy(xpath = "(//li)[10]//a//b")
+	private WebElement userName;
+
+	public WebElement getuserName() {
+		return userName;
+	}
+
+	public WebElement getLogoutButton() {
+		return logoutButton;
+	}
+
+	public WebElement getSignupLoginButton() {
+		return signupButton;
 	}
 
 	public WebElement getDeleteButton() {
@@ -68,6 +92,20 @@ public class AbstractComponent {
 				driver.findElement((By) key).click();
 			} else if (WebElement.class.isAssignableFrom(key.getClass())) {
 				((WebElement) key).click();
+			}
+		}
+	}
+
+	public void closeChild() {
+		String parent = driver.getWindowHandle();
+		Set<String> s = driver.getWindowHandles();
+		Iterator<String> I1 = s.iterator();
+		while (I1.hasNext()) {
+			String child_window = I1.next();
+			if (!parent.equals(child_window)) {
+				driver.switchTo().window(child_window);
+				driver.close();
+				driver.switchTo().window(parent);
 			}
 		}
 	}

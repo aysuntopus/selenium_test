@@ -12,7 +12,7 @@ public class DeletePage extends AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//b[normalize-space()='Account Created!'")
+	@FindBy(xpath = "//b[normalize-space()='Account Deleted!']")
 	private WebElement deleteSuccessTitle;
 
 	@FindBy(css = "a[data-qa = 'continue-button']")
