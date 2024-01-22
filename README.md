@@ -1,4 +1,4 @@
-# Selenium Tests for Online Shopping
+# Selenium Tests - Online Shopping
 
 The repository contains tests based on Page Object Model, Selenium, TestNG using Java on AutomationExercise website which is full-fledged practice for Automation Engineers and it provides: 
 - ability to user account creation
