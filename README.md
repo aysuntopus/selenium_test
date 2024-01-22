@@ -16,6 +16,11 @@ Before you can run this project, you must have the following software installed 
 - Apache Maven
 - Google Chrome web browser
   
+ ## Dependencies
+This project uses the following dependencies:
+- Selenium Java version 3.141.59
+- TestNG version 7.1.0
+  
 ## Installation
 - Clone with Git using command line and this command:
 ```sh
