@@ -10,6 +10,12 @@ The repository contains tests based on Page Object Model, Selenium, TestNG using
 
 ```App links : https://automationexercise.com/```
 
+## Prerequisites
+Before you can run this project, you must have the following software installed on your computer:
+- Java Development Kit (JDK) version 8 or later
+- Apache Maven
+- Google Chrome web browser
+- 
 ## Installation
 - Clone with Git using command line and this command:
 ```sh
