@@ -15,7 +15,7 @@ Before you can run this project, you must have the following software installed 
 - Java Development Kit (JDK) version 8 or later
 - Apache Maven
 - Google Chrome web browser
-- 
+  
 ## Installation
 - Clone with Git using command line and this command:
 ```sh
