@@ -7,7 +7,7 @@ The repository contains tests based on Page Object Model, Selenium, TestNG using
 - view category products,
 - add products to cart and finish the order,
 - review on product.
-- 
+
 ```App links : https://automationexercise.com/```
 
 ## Installation
