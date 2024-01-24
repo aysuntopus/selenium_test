@@ -12,5 +12,6 @@ public class BaseTest extends AbstractComponent {
 	
 	public void navigateMainPage() throws InterruptedException {
 		driver.get("http://automationexercise.com");
+		driver.manage().window().maximize();
 	}	
 }

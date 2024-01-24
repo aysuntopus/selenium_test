@@ -8,7 +8,6 @@ import testcases.components.AbstractComponent;
 public class RegisterPage extends AbstractComponent {
 
 	public RegisterPage() {
-		super();
 		PageFactory.initElements(driver, this);
 	}
 

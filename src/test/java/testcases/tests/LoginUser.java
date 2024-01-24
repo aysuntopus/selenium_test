@@ -49,7 +49,6 @@ public class LoginUser extends BaseTest {
 	public void loginUser(LoginUserInfo input) throws InterruptedException {
 		Thread.sleep(1000);
 		closeChild();
-
 		navigateMainPage();
 		getSignupLoginButton().click();
 		Map<Object, String> m = Map.of(loginPage.getloginEmail(), input.getEmail(), loginPage.getloginPassword(),
@@ -60,8 +59,9 @@ public class LoginUser extends BaseTest {
 
 		if (input.getExpect()) {
 			Assert.assertEquals(getuserName().getText(), input.getName());
-		} else
+		} else {
 			Assert.assertEquals(loginPage.getUnsuccesLoginMsg().getText(), "Your email or password is incorrect!");
+		}
 	}
 
 	@DataProvider

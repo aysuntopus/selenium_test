@@ -3,8 +3,7 @@ package testcases.tests;
 import org.testng.annotations.Test;
 import testcases.pages.DeletePage;
 
-public class DeleteAccount extends BaseTest {
-	
+public class DeleteAccount extends BaseTest {	
 	private DeletePage deletePage;
 	
 	public DeleteAccount() {

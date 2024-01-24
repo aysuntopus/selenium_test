@@ -16,10 +16,11 @@ import org.testng.Assert;
 
 public class AbstractComponent {
 	public WebDriver driver;
-
+	private WebDriverWait wait;
 	public AbstractComponent() {
 		this.driver = DriverManager.getInstance().getDriver();
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, 1 /* Seconds */);
 	}
 
 	@FindBy(css = "a[href='/delete_account']")
@@ -33,6 +34,9 @@ public class AbstractComponent {
 
 	@FindBy(xpath = "(//li)[10]//a//b")
 	private WebElement userName;
+	
+	@FindBy(css = "a[href ='/products']")
+	private WebElement products;
 
 	public WebElement getuserName() {
 		return userName;
@@ -49,16 +53,25 @@ public class AbstractComponent {
 	public WebElement getDeleteButton() {
 		return deleteButton;
 	}
+	
+	public WebElement getProductsButton() {
+		return products;
+	}
 
 	public void assertVisible(WebElement element, String errorMessage) {
-		WebDriverWait wait = new WebDriverWait(driver, 1 /* Seconds */);
+		
 		Exception exception = null;
 		try {
-			wait.until(ExpectedConditions.visibilityOf(element));
+			//wait.until(ExpectedConditions.visibilityOf(element));
+			waitUntilVisible(element);
 		} catch (TimeoutException e) {
 			exception = e;
 		}
 		Assert.assertNull(exception, errorMessage);
+	}
+	
+	public void waitUntilVisible(WebElement element) {
+		wait.until(ExpectedConditions.visibilityOf(element));		
 	}
 
 	public void assertVisible(By locator, String errorMessage) {

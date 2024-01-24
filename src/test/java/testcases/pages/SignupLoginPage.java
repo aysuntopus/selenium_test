@@ -8,7 +8,6 @@ import testcases.components.AbstractComponent;
 public class SignupLoginPage extends AbstractComponent {
 	
 	public SignupLoginPage() {
-		super();
 		PageFactory.initElements(driver,this);
 	}
 	
