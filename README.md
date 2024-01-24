@@ -30,10 +30,14 @@ git clone https://github.com/aysuntopus/selenium_test
 - Navigate to the project directory using command line.
 - Run the following command but replace "TestClass" with the name of the test case.
   
-       -- mvn test -Dtest=TestClass (mvn test -Dtest=RegisterUser)
+        mvn test -Dtest=TestClass (mvn test -Dtest=RegisterUser)
 ## Test cases covered (so far)
-- Register User
-- Login User with correct email and password
-- Login User with incorrect email and password
-- Logout User
-- Delete User Account
+- Register user
+- Login user with correct email and password
+- Login user with incorrect email and password
+- Logout user
+- Delete user account
+- Verify all products and product detail page
+- Search product
+- Add products in cart
+- Verify product quantity in cart
