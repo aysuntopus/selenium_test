@@ -30,7 +30,9 @@ git clone https://github.com/aysuntopus/selenium_test
 - Navigate to the project directory using command line.
 - Run the following command but replace "TestClass" with the name of the test case.
   
-        mvn test -Dtest=TestClass (mvn test -Dtest=RegisterUser)
+        mvn test -Dtest=TestClass (mvn test -Dtest=RegisterUser)  
+- or you can run all test cases with test suite via given command:
+          mvn clean test -DxmlFilePath=testng
 ## Test cases covered (so far)
 - Register user
 - Login user with correct email and password
