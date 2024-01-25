@@ -2,6 +2,7 @@ package testcases.tests;
 
 import org.testng.annotations.Test;
 import testcases.pages.DeletePage;
+import testcases.resources.Retry;
 
 public class DeleteAccount extends BaseTest {	
 	private DeletePage deletePage;
@@ -10,7 +11,7 @@ public class DeleteAccount extends BaseTest {
 		deletePage = new DeletePage();
 	}
 	
-	@Test
+	@Test(retryAnalyzer=Retry.class)
 	public void deleteAccount() throws InterruptedException {		
 		click(getDeleteButton());
 		closeChild();

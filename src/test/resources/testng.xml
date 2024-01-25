@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Tests" >
-  <test name="Test1">
-    <classes>
-      <class name="testcases.tests.RegisterUser"/>
-      <class name="testcases.tests.LoginUser"/>
-      <class name="testcases.tests.Logout"/>
-    </classes>
-   </test>  
-    <test name="Test2">
-    <classes>
-      <class name="testcases.tests.LoginUser"/>
-	  <class name="testcases.tests.DeleteAccount"/>
-    </classes>
-  </test>  
+<suite name="Tests">
+	<listeners>
+		<listener class-name="testcases.resources.Listeners" />
+	</listeners>
+	<tests>
+		<test name="Register">
+			<classes>
+				<class name="testcases.tests.RegisterUser" />
+				<class name="testcases.tests.LoginUser" />
+				<class name="testcases.tests.Logout" />
+			</classes>
+		</test>
+		<test name="ProductAddCart">
+			<classes>
+				<class name="testcases.tests.ProductList" />
+				<class name="testcases.tests.SearchProduct" />
+				<class name="testcases.tests.AddProductsInCart" />
+			</classes>
+		</test>
+		<test name="DeleteAccount">
+			<classes>
+				<class name="testcases.tests.LoginUser" />
+				<class name="testcases.tests.DeleteAccount" />
+			</classes>
+		</test>
+	</tests>
 </suite>

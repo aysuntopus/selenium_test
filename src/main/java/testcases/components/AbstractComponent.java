@@ -1,10 +1,15 @@
 package testcases.components;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -107,6 +112,19 @@ public class AbstractComponent {
 				((WebElement) key).click();
 			}
 		}
+	}
+	
+	public String takeScreenShot(String testname, WebDriver driver) {
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File(System.getProperty("user.dir") + "//reports" + "testname" + ".png");
+		try {
+			FileUtils.copyFile(source, file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return System.getProperty("user.dir") + "//reports" + "testname" + ".png";		
 	}
 
 	public void closeChild() {

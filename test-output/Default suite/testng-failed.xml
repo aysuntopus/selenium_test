@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.TestCases.tests.RegisterUser">
+      <class name="testcases.tests.DeleteAccount">
         <methods>
-          <include name="visibleVerify"/>
-          <include name="signUp"/>
+          <include name="tearDown"/>
+          <include name="deleteAccount"/>
         </methods>
-      </class> <!-- TestCases.TestCases.tests.RegisterUser -->
+      </class> <!-- testcases.tests.DeleteAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

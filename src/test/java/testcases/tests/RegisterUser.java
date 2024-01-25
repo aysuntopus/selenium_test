@@ -20,12 +20,13 @@ public class RegisterUser extends BaseTest {
 	}
 
 	@Test
-	public void visibleVerify() {
+	public void visibleVerify() throws InterruptedException {		
 		try {
 			navigateMainPage();
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
+		}			
 		assertVisible(homepage.getBanner(), "It didn't respond in 1 seconds.");
 	}
 
