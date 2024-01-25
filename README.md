@@ -12,10 +12,10 @@ The repository contains tests based on Page Object Model, Selenium, TestNG using
 
 ## Short Test Framework Description
 
-- This test framework is being built with Page Object Pattern, Page Objects include whole pages and their methods.
+- This test framework is being built with Page Object Pattern, Page Objects include whole pages' elements and actions.
 - Abstract components includes common element for pages (like footer, header etc.) and common methods are used from test cases.
 - Extentreports library is used for graphical reporting.
-- TestNG Listeners is used to take a screenshot of the browser window when a test case fails for identifying the cause of the failure.
+- TestNG Listeners is used to take a screenshot of the browser window when a test case fails.
 
 ## Prerequisites
 Before you can run this project, you must have the following software installed on your computer:
