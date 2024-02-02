@@ -41,7 +41,7 @@ git clone https://github.com/aysuntopus/selenium_test
 - or you can run all test cases with test suite via given command:
   
         mvn clean test -DxmlFilePath=testng
-## Test cases covered (so far)
+## Test Cases Covered (so far)
 - Register user
 - Login user with correct email and password
 - Login user with incorrect email and password
@@ -51,7 +51,7 @@ git clone https://github.com/aysuntopus/selenium_test
 - View category products
 - View brand products
 - Search product
-- Add products in Cart
+- Add products in cart
 - Add to cart from recommended items
 - Verify product quantity in cart
 - Remove products from cart
