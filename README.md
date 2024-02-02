@@ -7,7 +7,7 @@ The repository contains tests based on Page Object Model, Selenium, TestNG using
 - View category products,
 - Add products to cart and finish the order
 
-```App links : https://automationexercise.com/```
+```App link : https://automationexercise.com/```
 
 ## Short Test Framework Description
 
@@ -40,7 +40,7 @@ git clone https://github.com/aysuntopus/selenium_test
 - or you can run all test cases with test suite via given command:
   
         mvn clean test -DxmlFilePath=testng
-## Test Cases Covered (so far)
+## Test Cases Covered
 - Register user
 - Login user with correct email and password
 - Login user with incorrect email and password
