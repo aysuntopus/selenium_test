@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import testcases.components.AbstractComponent;
 
 public class RegisterPage extends AbstractComponent {
-
 	public RegisterPage() {
 		PageFactory.initElements(driver, this);
 	}

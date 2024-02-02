@@ -45,11 +45,16 @@ public class LoginUser extends BaseTest {
 		loginPage = new SignupLoginPage();
 	}
 
+	public void loginUser(String email, String password, String name) throws InterruptedException {
+		loginUser(new LoginUserInfo(email, password, name, true));
+	}
+
 	@Test(dataProvider = "getUserData")
 	public void loginUser(LoginUserInfo input) throws InterruptedException {
 		Thread.sleep(1000);
 		closeChild();
 		navigateMainPage();
+
 		getSignupLoginButton().click();
 		Map<Object, String> m = Map.of(loginPage.getloginEmail(), input.getEmail(), loginPage.getloginPassword(),
 				input.getPassword());

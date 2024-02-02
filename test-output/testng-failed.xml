@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Tests]">
+  <listeners>
+    <listener class-name="testcases.resources.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="UsersOperations(failed)">
     <classes>
-      <class name="testcases.tests.DeleteAccount">
+      <class name="testcases.tests.Logout">
         <methods>
           <include name="tearDown"/>
-          <include name="deleteAccount"/>
+          <include name="logout"/>
         </methods>
-      </class> <!-- testcases.tests.DeleteAccount -->
+      </class> <!-- testcases.tests.Logout -->
+      <class name="testcases.tests.RegisterUser">
+        <methods>
+          <include name="visibleVerify"/>
+          <include name="tearDown"/>
+          <include name="signUp"/>
+        </methods>
+      </class> <!-- testcases.tests.RegisterUser -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- UsersOperations(failed) -->
+  <test thread-count="5" name="ProductAddCart(failed)">
+    <classes>
+      <class name="testcases.tests.ProductList">
+        <methods>
+          <include name="tearDown"/>
+          <include name="viewBrandsProducts"/>
+        </methods>
+      </class> <!-- testcases.tests.ProductList -->
+    </classes>
+  </test> <!-- ProductAddCart(failed) -->
+</suite> <!-- Failed suite [Tests] -->

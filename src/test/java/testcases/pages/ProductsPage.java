@@ -7,8 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import testcases.components.AbstractComponent;
 
-public class ProductsPage extends AbstractComponent {
-	
+public class ProductsPage extends AbstractComponent {	
 	public ProductsPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -51,8 +50,24 @@ public class ProductsPage extends AbstractComponent {
 	
 	@FindBy(xpath = "//div[@class='features_items']/div[@class='col-sm-4']")
 	private List<WebElement> searchProductsList;	
+	
+	@FindBy(xpath = "(//h4//a)[1]")
+	private WebElement womenCategory;
+	
+	@FindBy(xpath = "//a[@href='/brand_products/Polo']")
+	private WebElement poloBrand;
+	
+	@FindBy(xpath = "(//div[@id='Women']//ul//li//a)[1]")
+	private WebElement womenCategoryDress;
+	
+	@FindBy(xpath = "(//h2[normalize-space()='Women - Dress Products'])[1]")
+	private WebElement womenCategoryTitle;
+	
+	@FindBy(xpath = "(//h2[normalize-space()='Brand - Polo Products'])[1]")
+	private WebElement BrandPoloTitle;
+		
 	private By continueShoppingButton = By.cssSelector(".btn.btn-success.close-modal.btn-block");
-	private By viewCartButton = By.xpath("(//a)[28]");
+	private By viewCartButton = By.xpath("//div[@class='modal-body']//a");
 	
 	public WebElement getProductsPageTitle() {
 		return productsPageTitle;
@@ -112,5 +127,25 @@ public class ProductsPage extends AbstractComponent {
 	
 	public WebElement getsecondProductName() {
 		return secondProductName;
+	}
+	
+	public WebElement getWomenCategory() {
+		return womenCategory;
+	}
+	
+	public WebElement getWomenCategoryDress() {
+		return womenCategoryDress;
+	}
+	
+	public WebElement getWomenCategoryTitle() {
+		return womenCategoryTitle;
+	}
+	
+	public WebElement getPoloBrand() {
+		return poloBrand;
+	}
+	
+	public WebElement getPoloBrandTitle() {
+		return BrandPoloTitle;
 	}
 }

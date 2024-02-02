@@ -4,25 +4,31 @@
 		<listener class-name="testcases.resources.Listeners" />
 	</listeners>
 	<tests>
-		<test name="Register">
+
+		<test name="UsersOperations">
 			<classes>
 				<class name="testcases.tests.RegisterUser" />
+				<class name="testcases.tests.Logout" />
 				<class name="testcases.tests.LoginUser" />
 				<class name="testcases.tests.Logout" />
+			</classes>
+		</test>
+		<test name="UserDelete">
+			<classes>
+				<class name="testcases.tests.DeleteAccount" />
 			</classes>
 		</test>
 		<test name="ProductAddCart">
 			<classes>
 				<class name="testcases.tests.ProductList" />
 				<class name="testcases.tests.SearchProduct" />
-				<class name="testcases.tests.AddProductsInCart" />
+				<class name="testcases.tests.ProductsInCart" />
 			</classes>
-		</test>
-		<test name="DeleteAccount">
+		<test name="PlaceOrder">
 			<classes>
-				<class name="testcases.tests.LoginUser" />
-				<class name="testcases.tests.DeleteAccount" />
+				<class name="testcases.tests.PlaceOrder" />
 			</classes>
-		</test>
+		</test>	
+		</test>		
 	</tests>
 </suite>

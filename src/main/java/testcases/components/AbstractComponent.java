@@ -2,12 +2,16 @@ package testcases.components;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
@@ -22,6 +26,7 @@ import org.testng.Assert;
 public class AbstractComponent {
 	public WebDriver driver;
 	private WebDriverWait wait;
+
 	public AbstractComponent() {
 		this.driver = DriverManager.getInstance().getDriver();
 		PageFactory.initElements(driver, this);
@@ -39,9 +44,18 @@ public class AbstractComponent {
 
 	@FindBy(xpath = "(//li)[10]//a//b")
 	private WebElement userName;
-	
+
 	@FindBy(css = "a[href ='/products']")
 	private WebElement products;
+
+	@FindBy(css = "a[href ='/products']")
+	private List<WebElement> headerLinks;
+
+	@FindBy(xpath = "(//li)[3]//a")
+	private WebElement cartLink;
+
+	@FindBy(xpath = "(//div[@class='shop-menu pull-right']//ul/li)[1]")
+	private WebElement homeLink;
 
 	public WebElement getuserName() {
 		return userName;
@@ -58,25 +72,35 @@ public class AbstractComponent {
 	public WebElement getDeleteButton() {
 		return deleteButton;
 	}
-	
+
 	public WebElement getProductsButton() {
 		return products;
 	}
 
+	public List<WebElement> getheaderLinks() {
+		return headerLinks;
+	}
+
+	public WebElement getCartLink() {
+		return cartLink;
+	}
+
+	public WebElement getHomePage() {
+		return homeLink;
+	}
+
 	public void assertVisible(WebElement element, String errorMessage) {
-		
 		Exception exception = null;
 		try {
-			//wait.until(ExpectedConditions.visibilityOf(element));
 			waitUntilVisible(element);
 		} catch (TimeoutException e) {
 			exception = e;
 		}
 		Assert.assertNull(exception, errorMessage);
 	}
-	
+
 	public void waitUntilVisible(WebElement element) {
-		wait.until(ExpectedConditions.visibilityOf(element));		
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public void assertVisible(By locator, String errorMessage) {
@@ -113,18 +137,17 @@ public class AbstractComponent {
 			}
 		}
 	}
-	
+
 	public String takeScreenShot(String testname, WebDriver driver) {
-		TakesScreenshot ts = (TakesScreenshot)driver;
+		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir") + "//reports" + "testname" + ".png");
 		try {
 			FileUtils.copyFile(source, file);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return System.getProperty("user.dir") + "//reports" + "testname" + ".png";		
+		return System.getProperty("user.dir") + "//reports" + "testname" + ".png";
 	}
 
 	public void closeChild() {
@@ -139,5 +162,28 @@ public class AbstractComponent {
 				driver.switchTo().window(parent);
 			}
 		}
+	}
+
+	public Object[] findBrokenLinks(List<WebElement> links) throws MalformedURLException, IOException {
+		for (WebElement link : links) {
+			String url = link.getAttribute("href");
+			HttpURLConnection conn = (java.net.HttpURLConnection) new URL(url).openConnection();
+			conn.setRequestMethod("HEAD");
+			conn.connect();
+			if (conn.getResponseCode() > 400) {
+				return new Object[] { link.getText(), false };
+			}
+		}
+		return new Object[] { true };
+	}
+
+	public void scrollDown(int value) {
+		JavascriptExecutor Scroll = (JavascriptExecutor) this.driver;
+		Scroll.executeScript("window.scrollBy(0," + value + ")", "");
+	}
+
+	public void scrollBottom() {
+		JavascriptExecutor Scroll = (JavascriptExecutor) this.driver;
+		Scroll.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 }

@@ -5,8 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import testcases.components.AbstractComponent;
 
-public class ProductDetailsPage extends AbstractComponent {
-	
+public class ProductDetailsPage extends AbstractComponent {	
 	public ProductDetailsPage() {
 		PageFactory.initElements(driver, this);
 	}
