@@ -1,12 +1,11 @@
 # Selenium Tests - Online Shopping
 
 The repository contains tests based on Page Object Model, Selenium, TestNG using Java on AutomationExercise website which is full-fledged practice for Automation Engineers and it provides: 
-- ability to user account creation
-- login, logout and delete account operations,
-- add to cart from recommended items,
-- view category products,
-- add products to cart and finish the order,
-- review on product.
+- Ability to user account creation
+- Login, logout and delete account operations,
+- Add to cart from recommended items,
+- View category products,
+- Add products to cart and finish the order
 
 ```App links : https://automationexercise.com/```
 
