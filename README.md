@@ -47,7 +47,14 @@ git clone https://github.com/aysuntopus/selenium_test
 - Login user with incorrect email and password
 - Logout user
 - Delete user account
-- Verify all products and product detail
+- Verify all products and product detail page
+- View category products
+- View brand products
 - Search product
-- Add products in cart
+- Add products in Cart
+- Add to cart from recommended items
 - Verify product quantity in cart
+- Remove products from cart
+- Verify all links are working 
+- Place order: Register while checkout
+- Place order: Login before checkout
